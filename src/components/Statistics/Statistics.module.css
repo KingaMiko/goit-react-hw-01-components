@@ -1,8 +1,9 @@
 .statistics {
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   margin: 0px auto;
   margin-bottom: 70px;
-
+  min-width: 275px;
   border-radius: 10px;
   background-color: #fff;
   color: #fff;
