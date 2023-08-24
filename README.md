@@ -1,105 +1,55 @@
-# React homework template
+# React template
 
 This project was created with
 [Create React App](https://github.com/facebook/create-react-app). To get
 acquainted and configure additional features
 [refer to documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-## Creating a repository by template
+## Social network profile
 
-Use this GoIT repository as a template for creating a repository
-of your project. To use it just tap the `«Use this template»` button and choose
-`«Create a new repository»` option, as you can see on the image below.
+We need to create a Profile component with which we could display information
+about a social network user.
 
-![Creating repo from a template step 1](./assets/template-step-1.png)
+The component must accept several props with information about the user:
 
-The page for creating a new repository will open on the next step. Fill out
-the Name field and make sure the repository is public, then click
-`«Create repository from template»` button.
+username — user name tag — Social network tag without @ location — city and
+country avatar — link to image stats — object with information about activity
 
-![Creating repo from a template step 2](./assets/template-step-2.png)
+## Statistics Section
 
-You now have a personal project repository, having a repository-template file 
-and folder structure. After that, you can work with it as you would with any 
-other private repository: clone it on your computer, write code, commit, and 
-send it to GitHub.
+Create a component Statistics, which would display statistics on the transferred
+props. For example, uploads to the cloud by file type, webpage visits by users
+from different countries, financial expenses, etc.
 
-## Preparing for coding
+Description of the Statistics component The component must accept two props
+title and stats, in which the header and the statistics object are specified.
 
-1. Make sure you have an LTS version of Node.js installed on your computer.
-   [Download and install](https://nodejs.org/en/) if needed.
-2. Install the project's base dependencies with the `npm install` command.
-3. Start development mode by running the `npm start` command.
-4. Go to [http://localhost:3000](http://localhost:3000) in your browser. This
-   page will automatically reload after saving changes to the project files.
+title - is optional, and if it is not provided, the <h2> header markup should
+not be rendered. stats - An array of objects containing information about a
+statistical item. It can have any number of elements. You can skip the
+background color of the statistical item in the design, or create a function to
+generate a random color.
 
-## Deploy
+## Friends list
 
-The production version of the project will automatically be linted, built, and
-deployed to GitHub Pages, in the `gh-pages` branch, every time the `main` branch
-is updated. For example, after a direct push or an accepted pull request. To do
-this, you need to edit the `homepage` field in the `package.json` file,
-replacing `your_username` and `your_repo_name` with your own, and submit the
-changes to GitHub.
+We need to create a component FriendList with which we could display information
+about the user's friends.
 
-```json
-"homepage": "https://your_username.github.io/your_repo_name/"
-```
+Description of the FriendList component The component must accept one prop
+friends (an array of friend objects).
 
-Next, you need to go to the settings of the GitHub repository (`Settings` >
-`Pages`) and set the distribution of the production version of files from the
-`/root` folder of the `gh-pages` branch, if this was not done automatically.
+Description of the FriendListItem component The component must take several
+props:
 
-![GitHub Pages settings](./assets/repo-settings.png)
+avatar - link to the avatar name - friend's name isOnline - boolean indicating
+the status of a friend, online or offline.
 
-### Deployment status
+## Transaction History
 
-The deployment status of the latest commit is displayed with an icon next to its
-ID.
+A component of the transaction history must be created in the personal profile
+of the Internet Bank.
 
-- **Yellow color** - the project is being built and deployed.
-- **Green color** - deployment completed successfully.
-- **Red color** - an error occurred during linting, build or deployment.
-
-More detailed information about the status can be viewed by clicking on the
-icon, and in the drop-down window, follow the link `Details`.
-
-![Deployment status](./assets/deploy-status.png)
-
-### Live page
-
-After some time, usually a couple of minutes, the live page can be viewed at the
-address specified in the edited `homepage` property. For example, here is a link
-to a live version for this repository
-[https://goitacademy.github.io/react-homework-template](https://goitacademy.github.io/react-homework-template).
-
-If a blank page opens, make sure there are no errors in the `Console` tab
-related to incorrect paths to the CSS and JS files of the project (**404**). You
-most likely have the wrong value for the `homepage` property in the
-`package.json` file.
-
-### Routing
-
-If your application uses the `react-router-dom` library for routing, you must
-additionally configure the `<BrowserRouter>` component by passing the exact name
-of your repository in the `basename` prop. Slashes at the beginning and end of
-the line are required.
-
-```jsx
-<BrowserRouter basename="/your_repo_name/">
-  <App />
-</BrowserRouter>
-```
-
-## How it works
-
-![How it works](./assets/how-it-works.png)
-
-1. After each push to the `main` branch of the GitHub repository, a special
-   script (GitHub Action) is launched from the `.github/workflows/deploy.yml`
-   file.
-2. All repository files are copied to the server, where the project is
-   initialized and linted and built before deployment.
-3. If all steps are successful, the built production version of the project
-   files is sent to the `gh-pages` branch. Otherwise, the script execution log
-   will indicate what the problem is.
+Description of the TransactionHistory component We need to create a component
+TransactionHistory that accepts one prop items (an array of transaction objects
+from transactions.json). The component creates a table layout. Each transaction
+is a table row.
